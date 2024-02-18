@@ -1,0 +1,16 @@
+target:
+  - hostname: 192.168.1.93
+    platform: cisco_nxos
+    strictkey: false
+    username: admin
+    password: Qwe123!@#
+  # - hostname: 192.168.1.94
+  #   platform: juniper_junos
+  #   strictkey: false
+  #   username: root
+  #   password: Qwe123!@#
+  # - hostname: 192.168.1.95
+  #   platform: linux
+  #   strictkey: false
+  #   username: root
+  #   password: root
