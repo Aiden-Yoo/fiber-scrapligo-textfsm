@@ -1,7 +1,6 @@
 package scrap
 
 import (
-	"fmt"
 	"os"
 
 	"gopkg.in/yaml.v3"
@@ -28,7 +27,7 @@ type data struct {
 	uptime   string
 }
 
-func Scrap() {
+func getHost() []Target {
 	src, err := os.Open("./util/hosts.yaml")
 	if err != nil {
 		panic(err)
@@ -43,8 +42,5 @@ func Scrap() {
 		panic(err)
 	}
 
-	// getVersion(v)
-	for _, v := range inv.Targets {
-		fmt.Println(getVersion(v))
-	}
+	return inv.Targets
 }

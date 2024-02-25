@@ -17,7 +17,11 @@ func Initalize(router *fiber.App) {
 	router.Use(middleware.Json)
 
 	devices := router.Group("/devices")
-	devices.Post("/", handlers.ScrapDevice)
+	devices.Post("/version", handlers.GetVersion)
+
+	history := router.Group("/history")
+	devHistory := history.Group("/devices")
+	devHistory.Get("/version", handlers.GetVersionHistory)
 
 	router.Use(func(c *fiber.Ctx) error {
 		return c.Status(404).JSON(fiber.Map{

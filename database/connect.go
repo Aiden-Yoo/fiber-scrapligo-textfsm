@@ -17,7 +17,7 @@ func ConnectDB() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	err = DB.AutoMigrate(&model.Device{})
+	err = DB.AutoMigrate(&model.Version{})
 	if err != nil {
 		log.Fatal(err)
 	}
